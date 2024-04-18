@@ -27,9 +27,9 @@ public class InterfaceController : MonoBehaviour
     Instance.vieText.text = "Vies : " + value;   
     }
 
-    public void updateScore(int value)
+    public static void updateScore(int value)
     {
-    scoreText.text = "Score : " + value;
+    Instance.scoreText.text = "Score : " + value;
     }
     
 }

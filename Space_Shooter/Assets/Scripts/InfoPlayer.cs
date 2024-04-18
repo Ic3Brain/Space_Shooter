@@ -22,7 +22,7 @@ public class InfoPlayer : MonoBehaviour
         score += value; //score + value
         Debug.Log("score actuel du player : " + score);
 
-        InterfaceController.Instance.updateScore (score);
+        InterfaceController.updateScore (score);
     }
 public void updateVie(int value){
 
