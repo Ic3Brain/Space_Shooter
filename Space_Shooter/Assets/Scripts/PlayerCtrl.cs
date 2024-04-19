@@ -7,21 +7,41 @@ using UnityEngine.UIElements;
 public class PlayerCtrl : MonoBehaviour
 {[SerializeField]
     float speed;
+    public static float minX, maxX, minY, maxY;
+    public Camera _camera;
 
     Vector2 boundaries;
+    
+    void InitBoundaries()
+    {
+        float vertExtent = _camera.orthographicSize - (_camera.orthographicSize * 0.1f);
+
+        float _screenRatio = ((float)Screen.width / (float)Screen.height);
+        float horzExtent;
+
+        if (_screenRatio > 0) horzExtent = vertExtent * _screenRatio;
+        else horzExtent = vertExtent * (1 - _screenRatio);
+
+        minX = -horzExtent;
+        maxX = horzExtent;
+        minY = -vertExtent;
+        maxY = vertExtent;
+    }
+    
     
     
     
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start ()
+    {    
+        InitBoundaries();
+    
         boundaries = Vector2.zero;
-        boundaries.x = (Screen.width*0.5f)/178;
-        boundaries.y = (Screen.height*0.5f)/178;
-       
+         boundaries.x = maxX;
+         boundaries.y = maxY;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -35,9 +55,9 @@ public class PlayerCtrl : MonoBehaviour
             float verticalDir = Input.GetAxis("Vertical");
             pos.y = transform.position.y + (verticalDir*Time.deltaTime*speed);
             
-            pos.x = Mathf.Clamp(pos.x,-boundaries.x,boundaries.x);
-            pos.y = Mathf.Clamp(pos.y,-boundaries.y,boundaries.y-1);
-            transform.position = pos;
+             pos.x = Mathf.Clamp(pos.x,-boundaries.x,boundaries.x);
+             pos.y = Mathf.Clamp(pos.y,-boundaries.y,boundaries.y-1);
+             transform.position = pos;
             
             
         

@@ -13,19 +13,6 @@ public class GameController : MonoBehaviour
     public static float minX, maxX, minY, maxY;
     public Camera _camera;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        StartCoroutine(generateWave());
-        Debug.Log(Screen.width);
-
-        spawnRange.x = ((Screen.width*0.5f)/178)-0.25f;
-        
-    }
-    
     void InitBoundaries()
     {
         float vertExtent = _camera.orthographicSize - (_camera.orthographicSize * 0.1f);
@@ -41,6 +28,25 @@ public class GameController : MonoBehaviour
         minY = -vertExtent;
         maxY = vertExtent;
     }
+    
+    
+    
+
+
+
+    //  Start is called before the first frame update
+    void Start()
+    {
+        InitBoundaries();
+        
+        StartCoroutine(generateWave());
+        Debug.Log(Screen.width);
+
+        spawnRange.x = maxX;
+        
+    }
+    
+      
 
     
     
@@ -51,7 +57,7 @@ public class GameController : MonoBehaviour
         
             for(int i = 0; i <nbreEnnemyParVague; i++) {
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRange.x,spawnRange.x),Random.Range(spawnRange.y,spawnRange.y-1), 0);
-            Instantiate(ennemyPrefab,spawnPos,Quaternion.identity);
+            Instantiate(ennemyPrefab,spawnPos,ennemyPrefab.transform.rotation);
             yield return new WaitForSeconds(spawnTime);
         }
         
