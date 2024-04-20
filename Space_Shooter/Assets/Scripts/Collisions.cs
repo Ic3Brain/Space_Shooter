@@ -7,6 +7,7 @@ public class Collisions : MonoBehaviour
 {   private GameObject player;  
     public int scoredestruction = 10;
     public int viesperdu = -1;
+    public GameObject bonus;
     // Start is called before the first frame update
     void Start() {
         player = GameObject.FindGameObjectWithTag ("Player");
@@ -18,8 +19,16 @@ public class Collisions : MonoBehaviour
             {
                 player.GetComponent<InfoPlayer>().addScore(scoredestruction);
 
+                int indice = Random.Range(0,5);
+                if(indice == 0){  
+
+                GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation) as GameObject;}
+                
+            
                 Destroy (this.gameObject);// destroy l'ennemy
                 Destroy (other.gameObject);// destroy la rocket
+
+                
             }
         if (other.gameObject.tag == "Player"){   
         Debug.Log ("Ennemy rentre en collision avec le player");

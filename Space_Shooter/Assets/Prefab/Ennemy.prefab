@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoredestruction: 10
   viesperdu: -1
+  bonus: {fileID: 6845994620188326351, guid: 864afb1c753a6f147a61de623e7d0b2a, type: 3}
 --- !u!114 &-6553285696045156463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,4 +236,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7

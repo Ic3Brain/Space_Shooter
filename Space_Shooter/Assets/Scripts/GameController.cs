@@ -12,6 +12,13 @@ public class GameController : MonoBehaviour
     public bool isInGame = true;
     public static float minX, maxX, minY, maxY;
     public Camera _camera;
+    
+    
+    
+     
+     
+
+
 
     void InitBoundaries()
     {
@@ -68,5 +75,7 @@ public class GameController : MonoBehaviour
 
 
      }   
-    
+    public void restartWaves(){
+        StartCoroutine(generateWave());
+    }
 }

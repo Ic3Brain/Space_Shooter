@@ -4,32 +4,75 @@ using UnityEngine;
 using UnityEngine.Accessibility;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.UIElements;
+using UnityEditor;
 
 
 public class InterfaceController : MonoBehaviour
 {
+    public GameObject gameOverPanel;
+    public Transform ViePanelTransform;
+    public GameObject[] vies = new GameObject[5];
     public static InterfaceController Instance;
-
+    
+    
+    
     [SerializeField]
     private TextMeshProUGUI scoreText, vieText;
     void Awake(){
-        Instance = this;
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
+        Instance = this; 
         
-    }
+        int i = 0;
+        foreach(Transform child in ViePanelTransform) {
 
-   public static void updateVie(int value)
-    {
-    Instance.vieText.text = "Vies : " + value;   
-    }
+            vies [i] = child.gameObject;
+            i++;
 
+        }
+        Debug.Log("nmbre hearts : " + vies.Length);
+
+        gameOverPanel.SetActive(false);
+    }
     public static void updateScore(int value)
     {
-    Instance.scoreText.text = "Score : " + value;
+    Instance.scoreText.text = "Score : " + value; }
+    
+    
+    public static void updateVie(int value)
+    {
+    Instance.vieText.text = "Vies : " + value; 
+        
+        for (int i = 0; i < Instance.vies.Length; i++) { 
+        if (i > (value -1)){
+            Instance.vies [i].SetActive(false);
+        }else{
+            Instance.vies [i].SetActive(true);
+        }   
+        
+        }
+
+        if(value == 0) {
+            
+            Instance.gameOverPanel.SetActive(true);
+        }
+    }
+    public static void HideGameOver(){
+
+        Instance.gameOverPanel.SetActive(false);
     }
     
 }
+
+
+
+
+
+
+    
+
+
+    
+    
+    
+

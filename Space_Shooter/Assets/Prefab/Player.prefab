@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4918622198739413688}
   - component: {fileID: 9173743648582354809}
   - component: {fileID: 5068397226285318354}
+  - component: {fileID: -3861493808536792340}
   - component: {fileID: 4915951810612416776}
   - component: {fileID: 7768399877749662252}
   - component: {fileID: 3571061735436158738}
@@ -52,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  _camera: {fileID: 0}
 --- !u!114 &9173743648582354809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +81,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vies: 5
+--- !u!114 &-3861493808536792340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822590352955275886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e64b961b4bf49b4caed13317c70df61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &4915951810612416776
 BoxCollider2D:
   m_ObjectHideFlags: 0
