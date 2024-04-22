@@ -18,7 +18,7 @@ public class EnnemyMove : MonoBehaviour
         myTransform = GetComponent<Transform>();
         Destroy(gameObject, tempsdevie);
 
-        gameScript = GameObject.Find("GameHolder").GetComponent<GameController>();
+        gameScript = GameController.instance;
         
     }
 

@@ -45,8 +45,9 @@ public class PlayerCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        {
-            Vector3 pos = Vector3.zero;
+        if (GameController.instance.isInGame){
+             
+             Vector3 pos = Vector3.zero;
 
             float horizontalDir = Input.GetAxis("Horizontal");
             pos.x = transform.position.x + (horizontalDir*Time.deltaTime*speed);
@@ -58,16 +59,18 @@ public class PlayerCtrl : MonoBehaviour
              pos.x = Mathf.Clamp(pos.x,-boundaries.x,boundaries.x);
              pos.y = Mathf.Clamp(pos.y,-boundaries.y,boundaries.y-1);
              transform.position = pos;
+        }
             
             
+            
         
         
         
-        }  
+         
 
         
         
         
        
-       }
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,9 +9,20 @@ public class Collisions : MonoBehaviour
     public int scoredestruction = 10;
     public int viesperdu = -1;
     public GameObject bonus;
-
+    public static Collisions instance;
     public AudioClip explosion;
-    private AudioSource audio1;
+    public AudioSource audio1;
+    // public GameObject[] gameObjects = new GameObject[30];
+    // public int nbHeart = 0;
+ 
+
+   
+        
+
+     
+     
+     
+    
 
 
 
@@ -18,6 +30,8 @@ public class Collisions : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        
+        instance = this;
         player = GameObject.FindGameObjectWithTag ("Player");
         audio1 = GameObject.Find("GameHolder").GetComponent<AudioSource>();
     }
@@ -28,10 +42,13 @@ public class Collisions : MonoBehaviour
             {
                 player.GetComponent<InfoPlayer>().addScore(scoredestruction);
 
-                int indice = Random.Range(0,5);
-                if(indice == 0){  
+                int indice = UnityEngine.Random.Range(0,5);
+                if(indice == 0){ 
 
-                GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation) as GameObject;}
+                    GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation) as GameObject;
+                    // gameObjects[nbHeart++] = bonusGO;
+                    // Debug.Log("okok"+nbHeart);
+                }
                 
                 audio1.PlayOneShot(explosion,0.4f);
                 Destroy (this.gameObject);// destroy l'ennemy

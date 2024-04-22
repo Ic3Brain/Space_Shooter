@@ -27,12 +27,12 @@ public class PlayerCollision : MonoBehaviour
             }
        }
     void OnTriggerEnter2D(Collider2D other)
-         
-        { if (other.gameObject.tag == "HeartBonus") 
-            {
-                Destroy(other.gameObject);
-                audio1.PlayOneShot(bonus,0.3f);
-                info.updateVie(1);
-            }
+    { 
+        if (other.gameObject.tag == "HeartBonus") 
+        {
+            Destroy(other.gameObject);
+            audio1.PlayOneShot(bonus,0.3f);
+            info.updateVie(1);
+        }
    } 
 }

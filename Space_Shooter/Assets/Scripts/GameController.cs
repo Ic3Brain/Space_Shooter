@@ -13,8 +13,9 @@ public class GameController : MonoBehaviour
     public bool isInGame = true;
     public static float minX, maxX, minY, maxY;
     public Camera _camera;
-
     
+
+public static GameController instance;    
 
     
 
@@ -55,7 +56,7 @@ public class GameController : MonoBehaviour
     //  Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
         
         InitBoundaries();
         

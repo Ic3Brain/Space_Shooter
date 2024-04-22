@@ -22,7 +22,7 @@ public class EnnemyShot : MonoBehaviour
         startTime = Time.time;
         Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation);
 
-        gameScript = GameObject.Find("GameHolder").GetComponent<GameController>();
+        gameScript = GameController.instance;
     }
 
     

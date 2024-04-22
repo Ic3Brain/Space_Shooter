@@ -26,12 +26,13 @@ public class InfoPlayer : MonoBehaviour
 
         InterfaceController.updateVie(vies);
         
-        gameScript = GameObject.Find("GameHolder").GetComponent<GameController>();
+        
 
         }
 
-
-        
+    
+    
+    
     //appelé par le script de collisions des ennemy
     public void addScore(int value)
     
@@ -55,7 +56,7 @@ public void updateVie(int value){
     if(vies <= 0){
 
         Debug.Log("Game Over");
-        gameScript.isInGame = false;
+        GameController.instance.isInGame = false;
     }
 
     
@@ -66,15 +67,13 @@ public void restart(){
 
     vies = MAX_VIES;
     score = 0;
-    
-    gameScript.isInGame = true;
-    gameScript.restartWaves();
+    GameController.instance.isInGame = true;
+    GameController.instance.restartWaves();
     InterfaceController.updateVie(vies);
     InterfaceController.updateScore(score);
     InterfaceController.HideGameOver();
-    
-    
-}
+    Collisions.instance.audio1.Play();
+    }
 }
 
    
