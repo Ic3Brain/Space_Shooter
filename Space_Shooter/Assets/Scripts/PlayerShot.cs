@@ -11,6 +11,10 @@ public class PlayerShoot : MonoBehaviour
     public GameObject rocket;
     public GameObject SpawnPoint;
 
+    public AudioClip shot;
+    public AudioSource audio1;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +25,12 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown (KeyCode.Mouse0))
+        if (Input.GetKeyDown (KeyCode.Mouse0)) {  
         //Debug.Log("on tire des missiles");
 
         Instantiate(rocket, SpawnPoint.transform.position,quaternion.identity);
-
+        audio1.PlayOneShot(shot,0.3f);
+     }
 
     }
 }

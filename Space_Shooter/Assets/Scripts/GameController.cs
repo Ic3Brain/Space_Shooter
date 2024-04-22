@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -12,6 +13,16 @@ public class GameController : MonoBehaviour
     public bool isInGame = true;
     public static float minX, maxX, minY, maxY;
     public Camera _camera;
+
+    
+
+    
+
+    
+
+    
+
+    
     
     
     
@@ -44,6 +55,8 @@ public class GameController : MonoBehaviour
     //  Start is called before the first frame update
     void Start()
     {
+        
+        
         InitBoundaries();
         
         StartCoroutine(generateWave());
@@ -54,6 +67,7 @@ public class GameController : MonoBehaviour
     }
     
       
+
 
     
     
@@ -76,6 +90,8 @@ public class GameController : MonoBehaviour
 
      }   
     public void restartWaves(){
+        StopCoroutine(generateWave());
         StartCoroutine(generateWave());
     }
 }
+

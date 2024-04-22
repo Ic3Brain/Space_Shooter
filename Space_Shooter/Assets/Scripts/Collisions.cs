@@ -8,9 +8,18 @@ public class Collisions : MonoBehaviour
     public int scoredestruction = 10;
     public int viesperdu = -1;
     public GameObject bonus;
+
+    public AudioClip explosion;
+    private AudioSource audio1;
+
+
+
+
+
     // Start is called before the first frame update
     void Start() {
         player = GameObject.FindGameObjectWithTag ("Player");
+        audio1 = GameObject.Find("GameHolder").GetComponent<AudioSource>();
     }
     
     void OnCollisionEnter2D(Collision2D other)
@@ -24,7 +33,7 @@ public class Collisions : MonoBehaviour
 
                 GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation) as GameObject;}
                 
-            
+                audio1.PlayOneShot(explosion,0.4f);
                 Destroy (this.gameObject);// destroy l'ennemy
                 Destroy (other.gameObject);// destroy la rocket
 

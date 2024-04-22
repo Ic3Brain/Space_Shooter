@@ -10,16 +10,14 @@ public class InfoPlayer : MonoBehaviour
 
     private const int MAX_VIES = 5;
 
-    private GameController gameScript;
-
-    
-    
-    
-    
-
+    public GameController gameScript;
 
     
 
+    
+    
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +27,11 @@ public class InfoPlayer : MonoBehaviour
         InterfaceController.updateVie(vies);
         
         gameScript = GameObject.Find("GameHolder").GetComponent<GameController>();
-        
+
+        }
+
 
         
-        
-    }
     //appelé par le script de collisions des ennemy
     public void addScore(int value)
     
@@ -68,9 +66,11 @@ public void restart(){
 
     vies = MAX_VIES;
     score = 0;
+    
     gameScript.isInGame = true;
     gameScript.restartWaves();
     InterfaceController.updateVie(vies);
+    InterfaceController.updateScore(score);
     InterfaceController.HideGameOver();
     
     

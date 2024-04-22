@@ -16,10 +16,11 @@ public class InterfaceController : MonoBehaviour
     public GameObject[] vies = new GameObject[5];
     public static InterfaceController Instance;
     
-    
-    
     [SerializeField]
     private TextMeshProUGUI scoreText, vieText;
+    
+    
+    
     void Awake(){
         Instance = this; 
         
@@ -41,7 +42,7 @@ public class InterfaceController : MonoBehaviour
     
     public static void updateVie(int value)
     {
-    Instance.vieText.text = "Vies : " + value; 
+    // Instance.vieText.text = "Vies : " + value; 
         
         for (int i = 0; i < Instance.vies.Length; i++) { 
         if (i > (value -1)){

@@ -11,8 +11,11 @@ public class EnnemyShot : MonoBehaviour
     public float shotTime;
     private float startTime;
     private float elapsedTime;
-    private GameController gameScript;
+    public GameController gameScript;
+    
 
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,8 @@ public class EnnemyShot : MonoBehaviour
         gameScript = GameObject.Find("GameHolder").GetComponent<GameController>();
     }
 
+    
+    
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +35,8 @@ public class EnnemyShot : MonoBehaviour
 
         if (elapsedTime >= shotTime){
             startTime = Time.time;
-            Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation);  
+            Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation); 
+            
         }
 
         

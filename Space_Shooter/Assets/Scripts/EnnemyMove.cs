@@ -7,7 +7,11 @@ public class EnnemyMove : MonoBehaviour
     public float speed = 12f;
     public float tempsdevie;
     Transform myTransform;
-    private GameController gameScript;
+    
+    public GameController gameScript;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -68,6 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 694652324196162013, guid: 9160dc8597cb4df40a1a67e06c8fccd2, type: 3}
   SpawnPoint: {fileID: 5645329791499584224}
+  shot: {fileID: 0}
+  audio1: {fileID: 0}
 --- !u!114 &5068397226285318354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +82,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2db41605915bc547b2d19ed05933313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vies: 5
 --- !u!114 &-3861493808536792340
 MonoBehaviour:
   m_ObjectHideFlags: 0

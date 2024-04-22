@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     InfoPlayer info;
+
+    public AudioClip bonus;
+    public AudioSource audio1;
     
 
 
@@ -28,6 +31,7 @@ public class PlayerCollision : MonoBehaviour
         { if (other.gameObject.tag == "HeartBonus") 
             {
                 Destroy(other.gameObject);
+                audio1.PlayOneShot(bonus,0.3f);
                 info.updateVie(1);
             }
    } 
