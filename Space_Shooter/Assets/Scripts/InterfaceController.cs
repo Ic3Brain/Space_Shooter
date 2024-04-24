@@ -71,7 +71,7 @@ public class InterfaceController : MonoBehaviour
             Collisions.instance.audio1.Stop();
 
 
-            // TO DO  détruire les coeurs, détruire les ennemis, cut la musique
+            // TO DO  détruire les coeurs, détruire les ennemis, 
         }
     }
     public static void HideGameOver(){

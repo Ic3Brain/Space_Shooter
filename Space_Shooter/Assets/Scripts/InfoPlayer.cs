@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,14 +12,9 @@ public class InfoPlayer : MonoBehaviour
     private const int MAX_VIES = 5;
 
     public GameController gameScript;
-
     
 
     
-    
-    
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -51,23 +47,31 @@ public void updateVie(int value){
     if(vies < 0) {
         
         vies = 0;
+        
+        
     }
 
     if(vies <= 0){
 
         Debug.Log("Game Over");
         GameController.instance.isInGame = false;
+         gameObject.SetActive(false);
+        
+
     }
 
     
     InterfaceController.updateVie(vies);
-}
+    
+    }
 
 public void restart(){
 
+    
     vies = MAX_VIES;
     score = 0;
     GameController.instance.isInGame = true;
+    gameObject.SetActive(true);
     GameController.instance.restartWaves();
     InterfaceController.updateVie(vies);
     InterfaceController.updateScore(score);

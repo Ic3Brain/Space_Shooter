@@ -28,6 +28,8 @@ public class EnnemyMove : MonoBehaviour
         if(gameScript.isInGame){
 
             myTransform.Translate(Vector3.down*Time.deltaTime*speed);
+        }else{
+            Destroy(this.gameObject);
         }
         
     }

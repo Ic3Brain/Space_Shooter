@@ -30,7 +30,8 @@ public class PlayerShoot : MonoBehaviour
 
         Instantiate(rocket, SpawnPoint.transform.position,quaternion.identity);
         audio1.PlayOneShot(shot,0.3f);
-     }
+        
+        }
 
     }
 }

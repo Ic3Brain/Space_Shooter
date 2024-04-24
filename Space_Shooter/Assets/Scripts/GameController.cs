@@ -13,24 +13,11 @@ public class GameController : MonoBehaviour
     public bool isInGame = true;
     public static float minX, maxX, minY, maxY;
     public Camera _camera;
-    
-
-public static GameController instance;    
+    public static GameController instance;    
 
     
 
     
-
-    
-
-    
-    
-    
-    
-     
-     
-
-
 
     void InitBoundaries()
     {
@@ -49,11 +36,6 @@ public static GameController instance;
     }
     
     
-    
-
-
-
-    //  Start is called before the first frame update
     void Start()
     {
         instance = this;
@@ -67,12 +49,7 @@ public static GameController instance;
         
     }
     
-      
-
-
-    
-    
-    IEnumerator generateWave(){
+      IEnumerator generateWave(){
         
 
         while(isInGame){

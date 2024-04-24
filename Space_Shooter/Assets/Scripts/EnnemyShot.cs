@@ -13,6 +13,9 @@ public class EnnemyShot : MonoBehaviour
     private float elapsedTime;
     public GameController gameScript;
     
+    
+    
+    
 
     
     
@@ -36,10 +39,10 @@ public class EnnemyShot : MonoBehaviour
         if (elapsedTime >= shotTime){
             startTime = Time.time;
             Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation); 
+            }
+        
+        
             
         }
-
-        
-      }
     }
 }

@@ -8,14 +8,13 @@ public class Rocket_Movement : MonoBehaviour
     Transform myTransform;
     
     
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
         myTransform = GetComponent<Transform>();
-        
-
-
     }
 
     // Update is called once per frame
@@ -23,7 +22,8 @@ public class Rocket_Movement : MonoBehaviour
     { 
         
         myTransform.Translate(Vector3.up*Time.deltaTime*speed);
-        Destroy (this.gameObject, 2f);        
+        Destroy (this.gameObject, 2f);
         
     }
+         
 }

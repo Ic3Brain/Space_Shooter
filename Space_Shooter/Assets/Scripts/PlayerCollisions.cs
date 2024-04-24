@@ -9,6 +9,8 @@ public class PlayerCollision : MonoBehaviour
     public AudioClip bonus;
     public AudioSource audio1;
     
+    
+    
 
 
     // Start is called before the first frame update
@@ -35,4 +37,7 @@ public class PlayerCollision : MonoBehaviour
             info.updateVie(1);
         }
    } 
+
+
+   
 }
