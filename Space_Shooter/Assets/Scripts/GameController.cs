@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour
     public bool isInGame = true;
     public static float minX, maxX, minY, maxY;
     public Camera _camera;
-    public static GameController instance;    
+    public static GameController instance;  
+    Coroutine waveCorout;  
 
     
 
@@ -42,7 +43,7 @@ public class GameController : MonoBehaviour
         
         InitBoundaries();
         
-        StartCoroutine(generateWave());
+        waveCorout = StartCoroutine(generateWave());
         Debug.Log(Screen.width);
 
         spawnRange.x = maxX;
@@ -68,8 +69,8 @@ public class GameController : MonoBehaviour
 
      }   
     public void restartWaves(){
-        StopCoroutine(generateWave());
-        StartCoroutine(generateWave());
+        StopCoroutine(waveCorout);
+        waveCorout = StartCoroutine(generateWave());
     }
 }
 

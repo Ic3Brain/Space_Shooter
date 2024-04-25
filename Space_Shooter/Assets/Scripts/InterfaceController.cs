@@ -36,21 +36,14 @@ public class InterfaceController : MonoBehaviour
 
         gameOverPanel.SetActive(false);
     }
+    
     public static void updateScore(int value)
     {
-    Instance.scoreText.text = "Score : " + value; }
+        Instance.scoreText.text = "Score : " + value; 
+    }
+
     
-    private static void destroyHearts(GameObject[] gameObjects) {
-        // Debug.Log("oui"+gameObjects);
-         for (int i = 0; i < gameObjects.Length; i++) {
-            // GameObject child = gameObjects[i] as GameObject;
-            //  Debug.Log("child"+ child);
-        }
-            
-            
-
-    } 
-
+    
     public static void updateVie(int value)
     {
     // Instance.vieText.text = "Vies : " + value; 
@@ -64,15 +57,7 @@ public class InterfaceController : MonoBehaviour
         
         }
 
-        if(value == 0) {
-            
-            Instance.gameOverPanel.SetActive(true);
-            // destroyHearts(Collisions.instance.gameObjects);
-            Collisions.instance.audio1.Stop();
-
-
-            // TO DO  détruire les coeurs, détruire les ennemis, 
-        }
+        
     }
     public static void HideGameOver(){
 

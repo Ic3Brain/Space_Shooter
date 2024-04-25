@@ -12,22 +12,9 @@ public class Collisions : MonoBehaviour
     public static Collisions instance;
     public AudioClip explosion;
     public AudioSource audio1;
-    // public GameObject[] gameObjects = new GameObject[30];
-    // public int nbHeart = 0;
- 
-
-   
-        
-
-     
-     
-     
     
-
-
-
-
-
+ 
+ 
     // Start is called before the first frame update
     void Start() {
         
@@ -46,8 +33,7 @@ public class Collisions : MonoBehaviour
                 if(indice == 0){ 
 
                     GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation) as GameObject;
-                    // gameObjects[nbHeart++] = bonusGO;
-                    // Debug.Log("okok"+nbHeart);
+                    
                 }
                 
                 audio1.PlayOneShot(explosion,0.4f);

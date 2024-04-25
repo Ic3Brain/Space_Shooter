@@ -17,13 +17,9 @@ public class InfoPlayer : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
-        vies = MAX_VIES;
-
-        InterfaceController.updateVie(vies);
-        
-        
-
+        {
+            vies = MAX_VIES;
+            InterfaceController.updateVie(vies);
         }
 
     
@@ -56,6 +52,15 @@ public void updateVie(int value){
         Debug.Log("Game Over");
         GameController.instance.isInGame = false;
          gameObject.SetActive(false);
+        
+            
+            InterfaceController.Instance.gameOverPanel.SetActive(true);
+            ViesBonusController.DestroyAll();
+            Collisions.instance.audio1.Stop();
+
+
+            
+        
         
 
     }
