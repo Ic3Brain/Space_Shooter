@@ -7,20 +7,13 @@ using UnityEngine.Android;
 
 public class PlayerShoot : MonoBehaviour
 {
-
-    public GameObject rocket;
     public GameObject SpawnPoint;
-    
     public AudioClip shot;
     public AudioSource audio1;
+    public GameObject rocket;
+
     
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -30,8 +23,6 @@ public class PlayerShoot : MonoBehaviour
 
         Instantiate(rocket, SpawnPoint.transform.position,quaternion.identity);
         audio1.PlayOneShot(shot,0.3f);
-        
         }
-
     }
 }

@@ -11,7 +11,7 @@ public class InfoPlayer : MonoBehaviour
 
     private const int MAX_VIES = 5;
 
-    public GameController gameScript;
+    private GameController gameScript;
     
 
     
@@ -57,18 +57,9 @@ public void updateVie(int value){
             InterfaceController.Instance.gameOverPanel.SetActive(true);
             ViesBonusController.DestroyAll();
             Collisions.instance.audio1.Stop();
-
-
-            
-        
-        
-
-    }
-
-    
-    InterfaceController.updateVie(vies);
-    
-    }
+        }
+            InterfaceController.updateVie(vies);
+}
 
 public void restart(){
 

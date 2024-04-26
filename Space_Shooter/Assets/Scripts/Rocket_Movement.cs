@@ -6,11 +6,12 @@ public class Rocket_Movement : MonoBehaviour
 {
     public float speed = 12f;
     Transform myTransform;
+     
+     
     
     
     
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,9 @@ public class Rocket_Movement : MonoBehaviour
         
         myTransform.Translate(Vector3.up*Time.deltaTime*speed);
         Destroy (this.gameObject, 2f);
+         
+        
         
     }
-         
+    
 }

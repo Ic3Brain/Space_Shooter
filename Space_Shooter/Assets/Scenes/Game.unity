@@ -2213,6 +2213,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1302981387}
     - target: {fileID: 9173743648582354809, guid: afa6d43da594ddd49a1c8e110f59153f, type: 3}
+      propertyPath: Rocket
+      value: 
+      objectReference: {fileID: 694652324196162013, guid: 9160dc8597cb4df40a1a67e06c8fccd2, type: 3}
+    - target: {fileID: 9173743648582354809, guid: afa6d43da594ddd49a1c8e110f59153f, type: 3}
       propertyPath: audio1
       value: 
       objectReference: {fileID: 1302981387}
