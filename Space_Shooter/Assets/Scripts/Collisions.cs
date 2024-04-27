@@ -30,7 +30,7 @@ public class Collisions : MonoBehaviour
             {
                 player.GetComponent<InfoPlayer>().addScore(scoredestruction);
 
-                int indice = UnityEngine.Random.Range(0,5);
+                int indice = UnityEngine.Random.Range(0,20);
                 if(indice == 0){ 
 
                     GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation) as GameObject;
