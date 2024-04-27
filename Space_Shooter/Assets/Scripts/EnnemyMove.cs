@@ -8,7 +8,7 @@ public class EnnemyMove : MonoBehaviour
     public float tempsdevie;
     Transform myTransform;
     
-    public GameController gameScript;
+    private GameController gameScript;
     
     
     

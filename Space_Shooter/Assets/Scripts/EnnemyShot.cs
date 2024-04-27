@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,20 +12,15 @@ public class EnnemyShot : MonoBehaviour
     public float shotTime;
     private float startTime;
     private float elapsedTime;
-    public GameController gameScript;
-    
-    
-    
-    
-
-    
+    private GameController gameScript;
     
     // Start is called before the first frame update
     void Start()
     {
         startTime = Time.time;
-        Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation);
-
+        //Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation);
+        ObjectPool.SpawnObject(rocket, spawnPoint.transform.position, rocket.transform.rotation);
+        
         gameScript = GameController.instance;
     }
 
@@ -38,11 +34,9 @@ public class EnnemyShot : MonoBehaviour
 
         if (elapsedTime >= shotTime){
             startTime = Time.time;
-            Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation); 
+            //Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation); 
+            ObjectPool.SpawnObject(rocket, spawnPoint.transform.position, rocket.transform.rotation);
             }
-        
-        
-            
         }
     }
 }

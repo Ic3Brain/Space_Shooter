@@ -13,6 +13,7 @@ public class Collisions : MonoBehaviour
     public AudioClip explosion;
     public AudioSource audio1;
     
+    
  
  
     // Start is called before the first frame update
@@ -38,8 +39,8 @@ public class Collisions : MonoBehaviour
                 
                 audio1.PlayOneShot(explosion,0.4f);
                 Destroy (this.gameObject);// destroy l'ennemy
-                Destroy (other.gameObject);// destroy la rocket
-
+                //Destroy (other.gameObject);// destroy la rocket
+                ObjectPool.ReturnObjectToPool(other.gameObject);
                 
             }
         if (other.gameObject.tag == "Player"){   
