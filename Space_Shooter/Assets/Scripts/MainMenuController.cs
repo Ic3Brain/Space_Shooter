@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    
+    public string SceneName;
     // Start is called before the first frame update
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
+    }
+
+
+    public void changeScene()
+    {
+        SceneManager.LoadScene(SceneName);
     }
     public void Quit(){
         #if UNITY_EDITOR
