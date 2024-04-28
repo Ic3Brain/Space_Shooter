@@ -5,19 +5,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
-{
+{   
     public string SceneName;
-    // Start is called before the first frame update
+    
+    
+    /*Lance le jeu sur la scène "game"*/
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
     }
 
-
+    /*Change de scene*/
     public void changeScene()
     {
         SceneManager.LoadScene(SceneName);
     }
+
+    /*ferme le jeu*/
     public void Quit(){
         #if UNITY_EDITOR
         EditorApplication.isPlaying = false;

@@ -16,14 +16,15 @@ public class Collisions : MonoBehaviour
     
  
  
-    // Start is called before the first frame update
+    
     void Start() {
         
         instance = this;
         player = GameObject.FindGameObjectWithTag ("Player");
         audio1 = GameObject.Find("GameHolder").GetComponent<AudioSource>();
     }
-    
+    /*Collision rocket = addscore + proba de drop un coeur en plus
+    Collision contre ennemy ou tir ennemy = -1*/
     void OnCollisionEnter2D(Collision2D other)
          
         { if (other.gameObject.tag == "Rocket") 
@@ -39,7 +40,6 @@ public class Collisions : MonoBehaviour
                 
                 audio1.PlayOneShot(explosion,0.4f);
                 Destroy (this.gameObject);// destroy l'ennemy
-                //Destroy (other.gameObject);// destroy la rocket
                 ObjectPool.ReturnObjectToPool(other.gameObject);
                 
             }
@@ -48,9 +48,5 @@ public class Collisions : MonoBehaviour
 
         player.GetComponent<InfoPlayer>().updateVie(viesperdu);
         }
-        
-        
-        
     }
-        
 }

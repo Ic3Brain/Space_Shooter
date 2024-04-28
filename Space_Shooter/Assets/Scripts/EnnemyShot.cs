@@ -14,19 +14,17 @@ public class EnnemyShot : MonoBehaviour
     private float elapsedTime;
     private GameController gameScript;
     
-    // Start is called before the first frame update
+    /*Temps entre les tirs ennemy*/
     void Start()
     {
         startTime = Time.time;
-        //Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation);
         ObjectPool.SpawnObject(rocket, spawnPoint.transform.position, rocket.transform.rotation);
-        
         gameScript = GameController.instance;
     }
 
     
     
-    // Update is called once per frame
+    /*Temps entre les tirs ennemy*/
     void Update()
     {
         if(gameScript.isInGame) {
@@ -34,8 +32,7 @@ public class EnnemyShot : MonoBehaviour
 
         if (elapsedTime >= shotTime){
             startTime = Time.time;
-            //Instantiate(rocket, spawnPoint.transform.position, rocket.transform.rotation); 
-            ObjectPool.SpawnObject(rocket, spawnPoint.transform.position, rocket.transform.rotation);
+             ObjectPool.SpawnObject(rocket, spawnPoint.transform.position, rocket.transform.rotation);
             }
         }
     }

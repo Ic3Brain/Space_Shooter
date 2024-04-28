@@ -11,7 +11,10 @@ public class PlayerCtrl : MonoBehaviour
     public Camera _camera;
 
     Vector2 boundaries;
-    
+
+        
+        
+        /*Calculer la bordure en fonction de la résolution*/
     void InitBoundaries()
     {
         float vertExtent = _camera.orthographicSize - (_camera.orthographicSize * 0.1f);
@@ -28,11 +31,6 @@ public class PlayerCtrl : MonoBehaviour
         maxY = vertExtent;
     }
     
-    
-    
-    
-
-    // Start is called before the first frame update
     void Start ()
     {    
         InitBoundaries();
@@ -42,7 +40,7 @@ public class PlayerCtrl : MonoBehaviour
          boundaries.y = maxY;
     }
     
-    // Update is called once per frame
+    /*déplacement du joueur*/
     void Update()
     {
         if (GameController.instance.isInGame){
