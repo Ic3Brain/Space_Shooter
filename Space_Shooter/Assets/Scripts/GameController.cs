@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     
 
     
-
+    /*Bloquer le joueur grace a des bordures lié a la cameraSize*/
     void InitBoundaries()
     {
         float vertExtent = _camera.orthographicSize - (_camera.orthographicSize * 0.1f);
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
         maxY = vertExtent;
     }
     
-    
+    /*Génération des waves dans l'espace champ de la caméra*/
     void Start()
     {
         instance = this;

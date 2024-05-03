@@ -15,7 +15,7 @@ public class InfoPlayer : MonoBehaviour
     
 
     
-    // Start is called before the first frame update
+    /*Commence la partie avec le max de vies*/
     void Start()
         {
             vies = MAX_VIES;
@@ -24,7 +24,7 @@ public class InfoPlayer : MonoBehaviour
 
     
     
-    
+    /*ajoute le score a chaque destruction d'ennemy*/
     //appelé par le script de collisions des ennemy
     public void addScore(int value)
     
@@ -34,7 +34,9 @@ public class InfoPlayer : MonoBehaviour
 
         InterfaceController.updateScore (score);
     }
-public void updateVie(int value){
+
+    /*Gestionnaire de vies, si vies 0 = game over*/
+    public void updateVie(int value){
 
     vies += value;
     if(vies > MAX_VIES){
@@ -60,8 +62,8 @@ public void updateVie(int value){
         }
             InterfaceController.updateVie(vies);
 }
-
-public void restart(){
+    /*remet les paramètres de base*/
+    public void restart(){
 
     
     vies = MAX_VIES;
