@@ -9,6 +9,8 @@ public class PlayerCtrl : MonoBehaviour
     float speed;
     public static float minX, maxX, minY, maxY;
     public Camera _camera;
+    
+    //public Animator animator;
 
     Vector2 boundaries;
 
@@ -60,7 +62,7 @@ public class PlayerCtrl : MonoBehaviour
         }
             
             
-            
+        
         
         
         
