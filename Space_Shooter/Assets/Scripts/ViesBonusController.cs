@@ -5,9 +5,7 @@ using UnityEngine;
 public class ViesBonusController : MonoBehaviour
 {
     public static List<ViesBonusController> viesBonusControllers;
-    
-    
-    /*destruction des coeurs bonus en fin de partie*/
+    // Start is called before the first frame update
    void OnEnable()
    {
         if (viesBonusControllers == null)viesBonusControllers = new List<ViesBonusController>();

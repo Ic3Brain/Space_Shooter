@@ -22,7 +22,7 @@ public class Rocket_Movement : MonoBehaviour
         _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
     }
 
-    /*Après 2s les tirs ce désactive et se remettent dans le pool*/
+
     private IEnumerator ReturnToPoolAfterTime()
     {
         float elapsedTime = 0f;
@@ -36,7 +36,7 @@ public class Rocket_Movement : MonoBehaviour
     }       
 
 
-    /*déplacemet missile*/
+    // Update is called once per frame
     void Update()
     { 
         myTransform.Translate(Vector3.up*Time.deltaTime*speed);

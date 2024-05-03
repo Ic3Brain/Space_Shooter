@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   tempsdevie: 5
+  gameScript: {fileID: 0}
 --- !u!114 &5394431010340145279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +152,6 @@ MonoBehaviour:
   viesperdu: -1
   bonus: {fileID: 6845994620188326351, guid: 864afb1c753a6f147a61de623e7d0b2a, type: 3}
   explosion: {fileID: 8300000, guid: b143c774ccf36f3439b00d98187ecfea, type: 3}
-  audio1: {fileID: 0}
 --- !u!114 &-6553285696045156463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +167,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 4806632442800631334}
   rocket: {fileID: 2324652718085027155, guid: 3a5f093bfb1989a4fa36ecbd94e4f018, type: 3}
   shotTime: 2
+  gameScript: {fileID: 0}
+  shot: {fileID: 0}
+  audio1: {fileID: 0}
 --- !u!61 &6121151424048487792
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -36,17 +36,17 @@ public class InterfaceController : MonoBehaviour
 
         gameOverPanel.SetActive(false);
     }
-    /*Change le score sur l'interface*/
+    
     public static void updateScore(int value)
     {
         Instance.scoreText.text = "Score : " + value; 
     }
 
     
-    /*active ou désactive les coeurs*/
+    
     public static void updateVie(int value)
     {
-     
+    // Instance.vieText.text = "Vies : " + value; 
         
         for (int i = 0; i < Instance.vies.Length; i++) { 
         if (i > (value -1)){
@@ -57,7 +57,7 @@ public class InterfaceController : MonoBehaviour
         
         }
 
-        /*désactive le gameover panel*/
+        
     }
     public static void HideGameOver(){
 

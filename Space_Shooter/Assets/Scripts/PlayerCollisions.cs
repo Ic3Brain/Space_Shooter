@@ -9,12 +9,16 @@ public class PlayerCollision : MonoBehaviour
     public AudioClip bonus;
     public AudioSource audio1;
     
+    
+    
+
+
+    // Start is called before the first frame update
     void Start()
     {
         info = GetComponent<InfoPlayer>();
     }
 
-    /*si touché par une rocket ennemy alors -1 vie*/
     void OnCollisionEnter2D(Collision2D other)
          
         { if (other.gameObject.tag == "EnnemyRocket") 
@@ -24,8 +28,6 @@ public class PlayerCollision : MonoBehaviour
                 
             }
        }
-
-       /*si la player touche un coeur sur le sol alors +1 vie*/
     void OnTriggerEnter2D(Collider2D other)
     { 
         if (other.gameObject.tag == "HeartBonus") 

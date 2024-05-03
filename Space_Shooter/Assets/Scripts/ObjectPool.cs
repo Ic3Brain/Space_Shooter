@@ -12,27 +12,43 @@ public class ObjectPool : MonoBehaviour
      {
          PooledObjectInfo pool = ObjectPools.Find(p => p.LookupString == objectToSpawn.name);
 
-   
-    // Si le pool n'existe pas, créer le !
+    //     PooledObjectInfo pool = null;
+    //     foreach (PooledObjectInfo p in ObjectPools)
+    //     {
+    //         if (p.LookupString == objectToSpawn.name)
+    //         {
+    //             pool = p;
+    //             break;
+    //         }
+    //     }
+    // }
+    // if the pool doesn't exist, create it
     if (pool == null)
     {
         pool = new PooledObjectInfo() {LookupString = objectToSpawn.name};
         ObjectPools.Add(pool);
     }
-    // Regarde s'il n'y a pas d'object inactif dans le pool
+    // Check if there are any inactive objects in the pool
     GameObject spawnableObj = pool.InactiveObjects.FirstOrDefault();
 
-    
+    // GameObject spawnableObj = null;
+    // foreach (GameObject obj in pool.InactiveObjects)
+    // {
+    //     if (obj != null)
+    //     {
+    //         spawnableObj = obj;
+    //         break;
+    //     }
 
     if (spawnableObj == null)
         {
-        // Si il n'y a pas d'object inactif, en créer un nouveau ! 
+        // if there are no inactive objects, create a new one
         spawnableObj = Instantiate(objectToSpawn, spawnPosition, spawnRotation);
         }
 
         else
         {
-                // Si il y a un object inactif disponible, réactivez le !
+                // If there is an inactive object, reactive it
                 spawnableObj.transform.position = spawnPosition;
                 spawnableObj.transform.rotation = spawnRotation;
                 pool.InactiveObjects.Remove(spawnableObj);
@@ -41,7 +57,7 @@ public class ObjectPool : MonoBehaviour
 
         return spawnableObj;
     }
-            // Retour des objects dans le pool
+
     public static void ReturnObjectToPool(GameObject obj)
     {
             string goName = obj.name.Substring(0, obj.name.Length - 7);  // by taking off 7, we are removing the (clone) from the nam of the passed in obj            

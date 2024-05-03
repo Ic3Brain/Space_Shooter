@@ -7,17 +7,22 @@ public class EnnemyMove : MonoBehaviour
     public float speed = 12f;
     public float tempsdevie;
     Transform myTransform;
+    
     private GameController gameScript;
     
+    
+    
+    // Start is called before the first frame update
     void Start()
     {
         myTransform = GetComponent<Transform>();
         Destroy(gameObject, tempsdevie);
+
         gameScript = GameController.instance;
         
     }
 
-    /*Détruire les ennemy si le jeu n'est pas en marche*/
+    // Update is called once per frame
     void Update()
     {
         if(gameScript.isInGame){
