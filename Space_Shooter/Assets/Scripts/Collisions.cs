@@ -34,7 +34,7 @@ public class Collisions : MonoBehaviour
                 int indice = UnityEngine.Random.Range(0,20);
                 if(indice == 0){ 
 
-                    GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation) as GameObject;
+                    GameObject bonusGO = Instantiate(bonus,transform.position,bonus.transform.rotation);
                     
                 }
                 
